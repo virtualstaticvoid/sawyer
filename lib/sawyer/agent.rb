@@ -101,6 +101,7 @@ module Sawyer
         if headers = options[:headers]
           req.headers.update headers
         end
+        yield(req) if block_given?
         started = Time.now
       end
 
